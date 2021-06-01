@@ -3,7 +3,7 @@ import random
 import pygame
 
 # Martyna
-plik_obrazu = "C:/Marcy/Dev/Repo/Cwieczenie_Puzzle/blazenek_resized.jpg" 
+plik_obrazu = "C:/Marcy/Dev/Repo/projekcik/Projekt_ukladanka/blazenek_resized.jpg" 
 rozmiar_grafiki = (800, 600)
 szerokosc_kafelka = 200
 wysokosc_kafelka = 200

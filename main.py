@@ -20,3 +20,5 @@ pozioma_granica = pygame.Surface((szerokosc_kafelka, 1))
 pozioma_granica.fill(czarny)
 pionowa_granica = pygame.Surface((1, wysokosc_kafelka))
 pionowa_granica.fill(czarny)
+
+# testing testing 1,2,3

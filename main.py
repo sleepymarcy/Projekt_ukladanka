@@ -40,3 +40,9 @@ for k in range(kolumny) :
             kafelek.set_at((szerokosc_kafelka-2, 1), czarny)
             kafelek.set_at((szerokosc_kafelka-2, wysokosc_kafelka-2), czarny)
 kafelki[pusty_kafelek].fill(czarny)
+
+stan = {(kol, rzad): (kol, rzad) 
+            for kol in range(kolumny) for rzad in range(rzedy)}
+
+(pusty_k, pusty_r) = pusty_kafelek
+

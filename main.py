@@ -50,4 +50,17 @@ pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)
 pygame.display.set_caption("shift-puzzle")
 display.blit (obraz, (0, 0))
-pygame.display.flip() 
+pygame.display.flip()
+
+def zamiana_pozycji (k, r) :
+    global pusty_k, pusty_r
+    display.blit(
+        kafelki[stan[(k, r)]],
+        (pusty_k*szerokosc_kafelka, pusty_r*wysokosc_kafelka))
+    display.blit(
+        kafelki[pusty_kafelek],
+        (k*szerokosc_kafelka, r*wysokosc_kafelka))
+    stan[(pusty_k, pusty_r)] = stan[(k, r)]
+    stan[(k, r)] = pusty_kafelek
+    (pusty_k, pusty_r) = (k, r)
+    pygame.display.flip()

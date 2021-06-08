@@ -45,6 +45,7 @@ stan = {(kol, rzad): (kol, rzad)
             for kol in range(kolumny) for rzad in range(rzedy)}
 
 (pusty_k, pusty_r) = pusty_kafelek
+<<<<<<< HEAD
 
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)
@@ -64,3 +65,5 @@ def zamiana_pozycji (k, r) :
     stan[(k, r)] = pusty_kafelek
     (pusty_k, pusty_r) = (k, r)
     pygame.display.flip()
+=======
+>>>>>>> parent of 3bafb43 (Update main.py)

@@ -45,3 +45,9 @@ stan = {(kol, rzad): (kol, rzad)
             for kol in range(kolumny) for rzad in range(rzedy)}
 
 (pusty_k, pusty_r) = pusty_kafelek
+
+pygame.init()
+display = pygame.display.set_mode(rozmiar_grafiki)
+pygame.display.set_caption("shift-puzzle")
+display.blit (obraz, (0, 0))
+pygame.display.flip() 

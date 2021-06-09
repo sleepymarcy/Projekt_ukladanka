@@ -46,7 +46,7 @@ stan = {(kol, rzad): (kol, rzad)
 
 (pusty_k, pusty_r) = pusty_kafelek
 
-
+#Wiktoria
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)
 pygame.display.set_caption("shift-puzzle")

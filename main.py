@@ -46,6 +46,20 @@ stan = {(kol, rzad): (kol, rzad)
 
 (pusty_k, pusty_r) = pusty_kafelek
 
+#Faustyna: ROBOT-PRZESZKADZACZ, na razie wyświetla się na jednym kafelku
+class Robocik(pygame.sprite.Sprite):
+
+    def __init__(self):
+            super(Robocik, self).__init__()
+            self.okienko = pygame.Surface((200, 200))
+            self.okienko.fill((0, 0, 0))
+            self.okienko = pygame.transform.smoothscale(pygame.image.load("robot.png"), (200, 200))
+            self.rect = self.okienko.get_rect()
+
+    def robot_go(self):
+        # szerokosc = [12, 1, ]
+        obraz.blit(self.okienko, (200, 400) )
+        pygame.display.flip()
 
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)

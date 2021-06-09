@@ -56,15 +56,9 @@ class Robocik(pygame.sprite.Sprite):
             self.okienko.fill((0, 0, 0))
             self.okienko = pygame.transform.smoothscale(pygame.image.load("C:/Marcy/Dev/Repo/projekcik/Projekt_ukladanka/robot.png"), (200, 200))
             self.rect = self.okienko.get_rect()
-            
-    def poczatek_czasu(self):
-        self._start = pygame.time.get_ticks()
 
-    def obecny_czas(self):
-        return (pygame.time.get_ticks() - self._start)/1000
-
-    def robot_go(self):
-        obraz.blit(self.okienko, (200, 400) )
+    def robot_go(self, szerokosc_robota, wysokosc_robota):
+        obraz.blit(self.okienko, (szerokosc_robota, wysokosc_robota) )
         pygame.display.flip()
         
         
@@ -76,6 +70,12 @@ display = pygame.display.set_mode(rozmiar_grafiki)
 pygame.display.set_caption("shift-puzzle")
 display.blit (obraz, (0, 0))
 pygame.display.flip()
+
+robot = Robocik()
+
+lista_szerokosci = [1, 200, 400, 800, 64000]
+lista_dlugosci = [1, 200, 400, 800]
+
 
 def zamiana_pozycji (k, r) :
     global pusty_k, pusty_r

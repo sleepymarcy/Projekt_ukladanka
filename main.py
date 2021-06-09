@@ -51,13 +51,19 @@ class Robocik(pygame.sprite.Sprite):
 
     def __init__(self):
             super(Robocik, self).__init__()
+            self.start = 0
             self.okienko = pygame.Surface((200, 200))
             self.okienko.fill((0, 0, 0))
-            self.okienko = pygame.transform.smoothscale(pygame.image.load("robot.png"), (200, 200))
+            self.okienko = pygame.transform.smoothscale(pygame.image.load("C:/Marcy/Dev/Repo/projekcik/Projekt_ukladanka/robot.png"), (200, 200))
             self.rect = self.okienko.get_rect()
+            
+    def poczatek_czasu(self):
+        self._start = pygame.time.get_ticks()
+
+    def obecny_czas(self):
+        return (pygame.time.get_ticks() - self._start)/1000
 
     def robot_go(self):
-        # szerokosc = [12, 1, ]
         obraz.blit(self.okienko, (200, 400) )
         pygame.display.flip()
 

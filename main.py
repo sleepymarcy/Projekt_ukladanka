@@ -45,7 +45,7 @@ stan = {(kol, rzad): (kol, rzad)
             for kol in range(kolumny) for rzad in range(rzedy)}
 
 (pusty_k, pusty_r) = pusty_kafelek
-<<<<<<< HEAD
+
 
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)
@@ -65,5 +65,25 @@ def zamiana_pozycji (k, r) :
     stan[(k, r)] = pusty_kafelek
     (pusty_k, pusty_r) = (k, r)
     pygame.display.flip()
-=======
->>>>>>> parent of 3bafb43 (Update main.py)
+
+def tasowanie() :
+    global pusty_k, pusty_r
+    ostatni_r = 0
+    for i in range(75):
+        pygame.time.delay(50)
+        while True:
+            r = random.randint(1, 4)
+            if (ostatni_r + r == 5):
+                continue
+            if r == 1 and (pusty_k > 0):
+                zamiana_pozycji(pusty_k - 1, pusty_r)
+            elif r == 4 and (pusty_k < kolumny - 1):
+                zamiana_pozycji(pusty_k + 1, pusty_r)
+            elif r == 2 and (pusty_r > 0):
+                zamiana_pozycji(pusty_k, pusty_r - 1)
+            elif r == 3 and (pusty_r < rzedy - 1):
+                zamiana_pozycji(pusty_k, pusty_r + 1)
+            else:
+                continue
+            ostatni_r = r
+            break

@@ -60,10 +60,7 @@ class Robocik(pygame.sprite.Sprite):
     def robot_go(self, szerokosc_robota, wysokosc_robota):
         obraz.blit(self.okienko, (szerokosc_robota, wysokosc_robota) )
         pygame.display.flip()
-        
-        
-        
-        
+
 
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)

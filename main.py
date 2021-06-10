@@ -56,7 +56,7 @@ class Robocik():
 
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)
-pygame.display.set_caption("shift-puzzle")
+pygame.display.set_caption("Morskie puzzlowanie")
 display.blit (obraz, (0, 0))
 pygame.display.flip()
 
@@ -123,12 +123,12 @@ while True:
             zapisany_obraz = display.copy()
             display.blit(obraz, (0, 0))
             pygame.display.flip()
-            
+
             pygame.time.wait(1000)
             szerokosc_robota = random.choice(lista_szerokosci)
             wysokosc_robota = random.choice(lista_dlugosci)
             robot.robot_go(szerokosc_robota, wysokosc_robota)
-            
+
             pokazanie_rozwiazania = True
     elif pokazanie_rozwiazania and (event.type == pygame.MOUSEBUTTONUP):
         display.blit (zapisany_obraz, (0, 0))

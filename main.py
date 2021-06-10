@@ -46,7 +46,7 @@ stan = {(kol, rzad): (kol, rzad)
 
 (pusty_k, pusty_r) = pusty_kafelek
 
-#Faustyna: ROBOT-PRZESZKADZACZ, na razie wyświetla się na jednym kafelku
+#Faustyna: ROBOT-PRZESZKADZACZ
 class Robocik(pygame.sprite.Sprite):
 
     def __init__(self):
@@ -70,8 +70,8 @@ pygame.display.flip()
 
 robot = Robocik()
 
-lista_szerokosci = [1, 200, 400, 800, 64000]
-lista_dlugosci = [1, 200, 400, 800]
+lista_szerokosci = [1, 200, 400]
+lista_dlugosci = [1, 200, 400]
 
 
 def zamiana_pozycji (k, r) :
@@ -131,6 +131,12 @@ while True:
             zapisany_obraz = display.copy()
             display.blit(obraz, (0, 0))
             pygame.display.flip()
+            
+            pygame.time.wait(1000)
+            szerokosc_robota = random.choice(lista_szerokosci)
+            wysokosc_robota = random.choice(lista_dlugosci)
+            robot.robot_go(szerokosc_robota, wysokosc_robota)
+            
             pokazanie_rozwiazania = True
     elif pokazanie_rozwiazania and (event.type == pygame.MOUSEBUTTONUP):
         display.blit (zapisany_obraz, (0, 0))

@@ -108,3 +108,31 @@ def tasowanie() :
                 continue
             ostatni_r = r
             break
+
+na_start = True
+pokazanie_rozwiazania = False
+while True:
+    event = pygame.event.wait()
+    if event.type == pygame.QUIT:
+        pygame.quit()
+        sys.exit()
+    elif event.type == pygame.MOUSEBUTTONDOWN :
+        if na_start:
+            tasowanie()
+            na_start = False
+        elif event.dict['button'] == 1:
+            pozycja_myszki = pygame.mouse.get_pos()
+            k = pozycja_myszki[0] // szerokosc_kafelka
+            r = pozycja_myszki[1] // wysokosc_kafelka
+            if ((abs(k - pusty_k) == 1 and r == pusty_r) or
+                    (abs(r - pusty_r) == 1 and k == pusty_k)):
+                zamiana_pozycji (k, r)
+        elif event.dict['button'] == 3:
+            zapisany_obraz = display.copy()
+            display.blit(obraz, (0, 0))
+            pygame.display.flip()
+            pokazanie_rozwiazania = True
+    elif pokazanie_rozwiazania and (event.type == pygame.MOUSEBUTTONUP):
+        display.blit (zapisany_obraz, (0, 0))
+        pygame.display.flip()
+        pokazanie_rozwiazania = False

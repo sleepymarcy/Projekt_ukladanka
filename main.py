@@ -46,12 +46,33 @@ stan = {(kol, rzad): (kol, rzad)
 
 (pusty_k, pusty_r) = pusty_kafelek
 
-#Wiktoria
+#Faustyna: ROBOT-PRZESZKADZACZ, na razie wyświetla się na jednym kafelku
+class Robocik(pygame.sprite.Sprite):
+
+    def __init__(self):
+            super(Robocik, self).__init__()
+            self.start = 0
+            self.okienko = pygame.Surface((200, 200))
+            self.okienko.fill((0, 0, 0))
+            self.okienko = pygame.transform.smoothscale(pygame.image.load("C:/Marcy/Dev/Repo/projekcik/Projekt_ukladanka/robot.png"), (200, 200))
+            self.rect = self.okienko.get_rect()
+
+    def robot_go(self, szerokosc_robota, wysokosc_robota):
+        obraz.blit(self.okienko, (szerokosc_robota, wysokosc_robota) )
+        pygame.display.flip()
+
+
 pygame.init()
 display = pygame.display.set_mode(rozmiar_grafiki)
 pygame.display.set_caption("shift-puzzle")
 display.blit (obraz, (0, 0))
 pygame.display.flip()
+
+robot = Robocik()
+
+lista_szerokosci = [1, 200, 400, 800, 64000]
+lista_dlugosci = [1, 200, 400, 800]
+
 
 def zamiana_pozycji (k, r) :
     global pusty_k, pusty_r
